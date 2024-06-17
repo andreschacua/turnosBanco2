@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestión Turnos</title>
+</head>
+<body>
+    <h1>Banco X</h1>
+    <form method="get" action="{% url 'comparar' %}">
+        <p>Ingrese su Cedula de Ciudadania</p>
+        <label for="cedula"></label>
+        <input type="text" id="cedula" name="cedula">
+        <button type="submit">Ingresar</button>
+    </form>
+</body>
+</html>
