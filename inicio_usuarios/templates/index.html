@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Gestión Turnos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
     <h1>Banco X</h1>
-    <form method="get" action="{% url 'comparar' %}">
-        <p>Ingrese su Cedula de Ciudadania</p>
-        <label for="cedula"></label>
-        <input type="text" id="cedula" name="cedula">
-        <button type="submit">Ingresar</button>
-    </form>
+    <div class="container">
+        <form method="get" action="{% url 'comparar' %}">
+            <p>Ingrese su Cedula de Ciudadania</p>
+            <label for="cedula"></label>
+            <input type="text" id="cedula" name="cedula">
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <img src="{% static 'images/rombos.png' %}" alt="Figura" class="bottom-left-image">
 </body>
 </html>
