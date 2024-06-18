@@ -76,7 +76,7 @@ def cajero_view(request):
                     caja=caja
                 )
                 siguiente_turno.delete()
-                return HttpResponse(f'Turno {siguiente_turno.turno} asignado a {caja}')
+                # return HttpResponse(f'Turno {siguiente_turno.turno} asignado a {caja}')
             else:
                 return HttpResponse('No hay turnos en espera.')
 
@@ -93,7 +93,7 @@ def gerencia_view(request):
                 caja='gerencia'
             )
             siguiente_turno.delete()
-            return HttpResponse(f'Turno {siguiente_turno.turno} asignado a gerencia')
+            #return HttpResponse(f'Turno {siguiente_turno.turno} asignado a gerencia')
         else:
             return HttpResponse('No hay turnos en espera.')
 
@@ -112,7 +112,7 @@ def atencion_usuario_view(request):
                     caja=modulo
                 )
                 siguiente_turno.delete()
-                return HttpResponse(f'Turno {siguiente_turno.turno} asignado a {modulo}')
+                #return HttpResponse(f'Turno {siguiente_turno.turno} asignado a {modulo}')
             else:
                 return HttpResponse('No hay turnos en espera.')
 

@@ -2,38 +2,14 @@
 <html>
 <head>
     <title>Turnos Actuales y Pasados</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .current-turn {
-            width: 60%;
-        }
-        .history {
-            width: 35%;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/turnos.css' %}">
 </head>
 <body>
-    <h1>Turnos Actuales y Pasados</h1>
+    <h1>Bancos X</h1>
     <div class="container">
-        <div class="current-turn">
-            <h2>Turno Actual</h2>
-            <p>Turno: {{ turno_actual.turno }}</p>
-            <p>Atendiendo en: {{ turno_actual.caja }}</p>
-        </div>
         <div class="history">
-            <h2>Histórico de los Últimos 4 Turnos</h2>
+            <h3>Últimos Turnos</h3>
             <table>
                 <thead>
                     <tr>
@@ -45,12 +21,67 @@
                     {% for turno in turnos_pasados %}
                     <tr>
                         <td>{{ turno.turno }}</td>
-                        <td>{{ turno.caja }}</td>
+                        <td>
+                            {% if turno.caja == "caja_1" %}
+                                Caja 1
+                            {% elif turno.caja == "caja_2" %}
+                                Caja 2
+                            {% elif turno.caja == "caja_3" %}
+                                Caja 3
+                            {% elif turno.caja == "caja_4" %}
+                                Caja 4
+                            {% elif turno.caja == "caja_5" %}
+                                Caja 5
+                            {% elif turno.caja == "gerencia" %}
+                                Gerencia
+                            {% elif turno.caja == "modulo_1" %}
+                                Modulo 1
+                            {% elif turno.caja == "modulo_2" %}
+                                Modulo 2
+                            {% elif turno.caja == "modulo_3" %}
+                                Modulo 3
+                            {% elif turno.caja == "modulo_4" %}
+                                Modulo 4
+                            {% elif turno.caja == "modulo_5" %}
+                                Modulo 5
+                            {% endif %}
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+        <div class="current-turn">
+            <h2 class="actual">Turno Actual</h2>
+            <p class="num_turno">{{ turno_actual.turno }}</p>
+            <p class="modulo">Atendiendo en 
+                {% if turno_actual.caja == "caja_1" %}
+                    Caja 1
+                {% elif turno_actual.caja == "caja_2" %}
+                    Caja 2
+                {% elif turno_actual.caja == "caja_3" %}
+                    Caja 3
+                {% elif turno_actual.caja == "caja_4" %}
+                    Caja 4
+                {% elif turno_actual.caja == "caja_5" %}
+                    Caja 5
+                {% elif turno_actual.caja == "gerencia" %}
+                    Gerencia
+                {% elif turno_actual.caja == "modulo_1" %}
+                    Modulo 1
+                {% elif turno_actual.caja == "modulo_2" %}
+                    Modulo 2
+                {% elif turno_actual.caja == "modulo_3" %}
+                    Modulo 3
+                {% elif turno_actual.caja == "modulo_4" %}
+                    Modulo 4
+                {% elif turno_actual.caja == "modulo_5" %}
+                    Modulo 5
+                {% endif %}
+            </p>
+        </div>
     </div>
+
+    <img src="{% static 'images/rombos.png' %}" alt="Figura" class="rombos1">
 </body>
 </html>
