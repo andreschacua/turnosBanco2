@@ -38,9 +38,10 @@ def asignar_turno(request):
                 nuevo_numero = 1
             nuevo_turno = f'{turno_tipo}{nuevo_numero:03d}'
             Turnos.objects.create(cedula=cedula, turno=nuevo_turno)
-            return HttpResponse(f'Turno asignado: {nuevo_turno}')
+            return render(request, 'mostrar_turno.html', {'turno': nuevo_turno, 'cedula': cedula})
     
     return render(request, 'asignar_turno.html', {'cedula': cedula})
+
 
 def registro_cliente(request, cedula):
     if request.method == 'POST':
@@ -117,3 +118,15 @@ def atencion_usuario_view(request):
 
     turnos_en_espera = Turnos.objects.filter(turno__startswith='A')
     return render(request, 'atencion_usuario.html', {'turnos': turnos_en_espera})
+
+def turnos_view(request):
+    # Obtener el turno actual (último turno en la tabla TurnosPasados)
+    turno_actual = TurnosPasados.objects.latest('id')
+    
+    # Obtener los últimos 4 turnos pasados
+    turnos_pasados = TurnosPasados.objects.all().order_by('-id')[:4]
+    
+    return render(request, 'turnos.html', {
+        'turno_actual': turno_actual,
+        'turnos_pasados': turnos_pasados
+    })

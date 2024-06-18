@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turnos Actuales y Pasados</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .current-turn {
+            width: 60%;
+        }
+        .history {
+            width: 35%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Turnos Actuales y Pasados</h1>
+    <div class="container">
+        <div class="current-turn">
+            <h2>Turno Actual</h2>
+            <p>Turno: {{ turno_actual.turno }}</p>
+            <p>Atendiendo en: {{ turno_actual.caja }}</p>
+        </div>
+        <div class="history">
+            <h2>Histórico de los Últimos 4 Turnos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Turno</th>
+                        <th>Atendido en</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for turno in turnos_pasados %}
+                    <tr>
+                        <td>{{ turno.turno }}</td>
+                        <td>{{ turno.caja }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
