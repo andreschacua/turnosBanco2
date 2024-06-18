@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Turnos para Atención al Usuario</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
 </head>
 <body>
     <h1>Gestión de Turnos para Atención al Usuario</h1>
@@ -25,5 +27,8 @@
             <li>{{ turno.turno }} - {{ turno.cedula }}</li>
         {% endfor %}
     </ul>
+
+    <img src="{% static 'images/rombos2.png' %}" alt="Figura" class="rombos2">
+    <img src="{% static 'images/rombos5.png' %}" alt="Figura" class="rombos5">
 </body>
 </html>
