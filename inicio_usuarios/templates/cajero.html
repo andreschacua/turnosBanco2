@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turnos para Cajeros</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cajero.css' %}">
 </head>
 <body>
     <h1>Gestión de Turnos para Cajeros</h1>
@@ -25,5 +29,9 @@
             <li>{{ turno.turno }} - {{ turno.cedula }}</li>
         {% endfor %}
     </ul>
+
+    <img src="{% static 'images/rombos2.png' %}" alt="Figura" class="rombos2">
+    <img src="{% static 'images/rombos3.png' %}" alt="Figura" class="rombos3">
+
 </body>
 </html>
