@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Cliente</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
 </head>
 <body>
-    <h1>Registrar Cliente</h1>
+    <h1>Banco X</h1>
+    <img src="{% static 'images/rombos2.png' %}" alt="Figura" class="bottom-left-image">
     <form method="post">
         {% csrf_token %}
-        <label for="nombre">Nombre:</label>
+        <label for="nombre">Ingrese su Nombre:</label>
         <input type="text" id="nombre" name="nombre" required><br>
         <label for="telefono">Teléfono:</label>
         <input type="text" id="telefono" name="telefono" required><br>
