@@ -1,0 +1,104 @@
+body {
+    background-color: #EAEAEA;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Imagen de los rombos */
+.rombos2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 23.5%; /* Ajusta el tamaño relativo al viewport */
+}
+
+.rombos3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    width: 23.5vw; /* Ajusta el tamaño relativo al viewport */
+}
+
+/* Banco X */
+h1 {
+    width: 100%;
+    text-align: left;
+    margin-top: 2%;
+    padding-left: 5%; /* Ajusta este valor según sea necesario para mover el texto a la derecha */
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6vw;  /* Use viewport width to make it responsive */
+    line-height: 1.5;
+    color: #464646;
+}
+
+/* Selecciona el tipo de turno */
+p {
+    width: 100%;
+    text-align: left;
+    padding-left: 5%;
+    margin-top: -2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2vw;  /* Use viewport width to make it responsive */
+    line-height: 1.5;
+    color: #464646;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 5%;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 5%;
+}
+
+/* Contenedor botones */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    margin-top: -8%;
+    margin-left: 20%;
+}
+
+/* Botones */
+button {
+    flex: 1; /* Permite que los botones crezcan uniformemente */
+    height: 35vh; /* Ajusta la altura para mantener la forma */
+    background: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;  /* Aumenta el tamaño de la fuente para hacerla proporcional al botón */
+    color: #464646;
+    cursor: pointer;
+    margin: 0 2%; /* Añade un margen para separar los botones */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+button:hover {
+    background: #a3a3a3;
+}
+
+/* Imagen dentro de los botones */
+button img {
+    width: 50%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}

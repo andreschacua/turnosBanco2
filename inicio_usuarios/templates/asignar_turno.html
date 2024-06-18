@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asignar Turno</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/asignar.css' %}">
 </head>
 <body>
-    <h1>Asignar Turno</h1>
-    <p>Asignar turno a la cédula encontrada.</p>
+    <h1>Banco X</h1>
+    <p>Selecciona el tipo de turno.</p>
     <form method="post">
         {% csrf_token %}
         <input type="hidden" name="cedula" value="{{ cedula }}">
-        <button type="submit" name="caja">Caja</button>
-        <button type="submit" name="asesor">Asesor</button>
-        <button type="submit" name="gerencia">Gerencia</button>
+        <div class="button-container">
+            <button type="submit" name="caja">
+                <img src="{% static 'images/caja_icon.png' %}" alt="Caja">
+                Caja
+            </button>
+            <button type="submit" name="asesor">
+                <img src="{% static 'images/usuario_icon.png' %}" alt="Asesor">
+                Asesor
+            </button>
+            <button type="submit" name="gerencia">
+                <img src="{% static 'images/gerencia_icon.png' %}" alt="Gerencia">
+                Gerencia
+            </button>
+        </div>
     </form>
+
+    <img src="{% static 'images/rombos2.png' %}" alt="Figura" class="rombos2">
+    <img src="{% static 'images/rombos3.png' %}" alt="Figura" class="rombos3">
 </body>
 </html>
+
+
